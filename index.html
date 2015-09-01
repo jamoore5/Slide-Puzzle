@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="puzzleGame">
+<head>
+
+</head>
+    <meta charset="utf-8" />
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.1/angular.js" data-semver="1.4.1"></script>
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.1/angular-sanitize.js" data-semver="1.4.1"></script>
+    <script type="text/javascript" src="app.js"></script>
+   
+<body ng-app='puzzle' ng-controller="ImageController">
+    
+    <div class="container-fluid">
+        <div class="logo col-md-3 col-sm-2 col-xs-1"><img src="logo.png"/></div>
+        <div class=""><h1>SLIDE PUZZLE</h1></div>
+    </div>
+    
+    <audio id="slide" src="sound/slide.mp3" preload="auto"></audio>
+    <audio id="error" src="sound/error.mp3" preload="auto"></audio>
+    <audio id="win" src="sound/win.mp3" preload="auto"></audio>
+        
+    <div class=" well container">
+        
+        <div class="preview">
+            <img id="previewImage"  ng-src="{{products[current].images.low_resolution.url}}" />
+        <div id="previewImage">
+		<div id="row 0">
+			<span id="img 0" onclick="slide(0)"></span>
+			<span id="img 1" onclick="slide(1)"></span>
+			<span id="img 2" onclick="slide(2)"></span>
+		</div>
+		<div id="row 1">
+			<span id="img 3" onclick="slide(3)"></span>
+			<span id="img 4" onclick="slide(4)"></span>
+			<span id="img 5" onclick="slide(5)"></span>
+		</div>
+		<div id="row 2">
+			<span id="img 6" onclick="slide(6)"></span>
+			<span id="img 7" onclick="slide(7)"></span>
+			<span id="img 8" onclick="slide(8)"></span>
+		</div>
+	</div>
+        </div>
+        
+        <div class="preview text"><div class="text"><h1>{{(!products[current].user.full_name)? products[current].user.username: products[current].user.full_name;}}</h1>
+            <p>{{products[current].caption.text}}</p></div>
+            <button type="button"  class="btn btn-group-lg btn-primary center-block" onclick="sufflePuzzle()">Suffle</button>
+        </div>
+       
+    </div>
+    <div class="search container">
+        <div class="search-bar ">  
+
+            <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">#</span>
+                <input type="text" ng-model="search" ng-change="change()" onclick="select()" class="form-control " placeholder="Enter a tag to search" autofocus /></div></div>
+        
+     <div class=" col-md-12">           
+    <div class="product" ng-repeat="product in products" ng-hide="product.images.low_resolution.width != 320">
+            <img  ng-click="updateCurrent($index)" ng-src="{{product.images.thumbnail.url}}" />
+         </div>
+       
+  </div></div>
+    
+   
+	 <script type="text/javascript" src="puzzle.js"></script>
+</body>
+
+</html>
+
+
+
+
+
