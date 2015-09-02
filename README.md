@@ -8,7 +8,7 @@
 ## issue with $http.get and instagram API 
 -- TODO explain issue and fix
 
-## inprovements
+## improvements
 1. make all shuffles solvable
 2. add code to solve the puzzle (use to give hints or solution)
 3. allow user to sign into instagram and play with their own photos
