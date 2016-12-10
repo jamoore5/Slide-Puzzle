@@ -5,6 +5,9 @@
 2. html, css, and bootstrapt to display the puzzle
 3. angular.js to fetch photos from Instagram API and display them
 
+## issue instagram API 
+-- instagram updated there API and now my logic is broken to retrive images from instragram. Need to fix API call. May no longer be able to search tags.
+
 ## issue with $http.get and instagram API 
 -- TODO explain issue and fix
 
