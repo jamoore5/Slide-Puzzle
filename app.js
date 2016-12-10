@@ -15,7 +15,7 @@ app.controller('ImageController', function($scope, $http) {
     };
     
     function fetch(){
-        $http.jsonp('https://api.instagram.com/v1/tags/' + $scope.search + '/media/recent?client_id=4d1732cfee2f48dfb136c5c441e9984a&callback=JSON_CALLBACK')
+         $http.jsonp('https://api.instagram.com/v1/users/639615785/media/recent/?access_token=639615785.c127b9e.1d2e8ab6cc024d0a90f7ba7ad4cca66c&callback=JSON_CALLBACK')
             .success(function(response) { $scope.products = response.data;});
     };
     
